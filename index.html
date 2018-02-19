@@ -1,0 +1,80 @@
+<html>
+<head>
+<title>ITP Thesis Bingo</title>
+<style type="text/css">
+html, body {
+  -webkit-print-color-adjust: exact; 
+}
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  vertical-align: center;
+}
+thead {
+  background-color: #000;
+  color: #fff;
+}
+th {
+  font: 70px/68px 'Playfair Display', Georgia, serif;
+  text-align: center;
+  padding: 7px 0;
+}
+td {
+  width: 140px;
+  height: 140px;
+  text-align: center;
+  border: 1px solid black;
+  font: 16px/30px 'Fauna One', Georgia, serif;
+}
+#middle {
+  background-color: #000;
+  color: #fff;
+}
+</style>
+<link href='https://fonts.googleapis.com/css?family=Fauna+One|Playfair+Display:400,700,900,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+<table>
+<thead>
+<tr>
+<th>B</th>
+<th>I</th>
+<th>N</th>
+<th>G</th>
+<th>O</th>
+</tr>
+</thead>
+<tbody id="tableBody">
+</tbody>
+</table>
+</body>
+
+<script type="text/javascript">
+var words = new Array("'Smart' Devices","Aesthetics","AI/Bots","Any Itp Instructor","API","App","AR","Architecture","Behaviors","Bodies","Cameras","Children","China","Chrome Extension","Comics","Communication","Communities","Computer Vision","Consumerism","Conversation","Creative","Culture","Data","Design","Devices","Dreams","Education","Emotions","Environments","Family","Feminism","Game","Gesture","Healthcare","History","Hololens","Identity","Images","Immersion","Information","Installation","Interaction","Interfaces","Internet  ","Kinect","Language","Light","Machine Learning","Maps","Media","Memory","Motion","Movies","Music","Narrative","Nature","Network","New York City","News","Patterns","Perception","Performance","Platform","Platforms","Politics","Power","Practice","Privacy ","Process","Projection","Psychology","Sculpture","Security","Social Media ","Sound","Space","Speculative","Storytelling ","System","Techology","Therapy","Tracking","Travel","Unity","User Experience","Visualization","Voice","Vision","VR","Wearables","Women");
+function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+}
+shuffleArray(words);
+var tableBody = document.getElementById("tableBody");
+for (var i = 0; i < 5; i++) {
+  var row = document.createElement("tr");
+  for (var j = 0; j < 5; j++) {
+    var cell = document.createElement("td");
+    if (i == 2 && j == 2) {
+      cell.appendChild(document.createTextNode("Thesis"));
+      cell.id = "middle";
+    } else {
+      cell.appendChild(document.createTextNode(words[i*5+j]));
+    }
+    row.appendChild(cell);
+  }
+  tableBody.appendChild(row);
+}
+</script>
+</html>
